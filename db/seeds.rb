@@ -35,7 +35,7 @@ second_car = Car.create!(
   description: "On vous entendera rouler. Pneu plus larges que ton ancienne voiture.",
   )
 
-second_car = Car.create!(
+third_car = Car.create!(
   user_id: 3,
   brand: "Jaguar",
   model: "Type-S",
@@ -45,6 +45,29 @@ second_car = Car.create!(
   address: "5 Rue Oberkampf 75011 PARIS",
   description: "James Bond aurait bien aimé la conduire!",
   )
+
+  fourth_car = Car.create!(
+  user_id: 3,
+  brand: "Volkswagen",
+  model: "Cocinelle",
+  power: 60,
+  price: 90,
+  year: 1949,
+  address: "6 rue Sorbier 75020 PARIS",
+  description: "Revivez la période hyppie. Interdit de fumer à l'intérieur",
+  )
+
+  fifth_car = Car.create!(
+  user_id: 2,
+  brand: "Ferrari",
+  model: "F-40",
+  power: 310,
+  price: 480,
+  year: 1963,
+  address: "10 rue Saint-Maur, 75011 Paris",
+  description: "Vous ne serez pas serein, lorsque vous ferez un créneau! Jaune possible, mais de mauvais goût",
+  )
+
 
 puts "Fake Cars done"
 puts "Starting Fake Booking"
