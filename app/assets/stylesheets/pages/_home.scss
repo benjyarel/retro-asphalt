@@ -1,1 +1,17 @@
 // Specific CSS for your home-page
+.banner {
+  height: 75vh;
+  clip-path: polygon(0 0, 100% 0%, 100% 74%, 0% 100%);
+  background: lightblue;
+}
+
+.info-cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.info-card {
+  border: 2px dotted black;
+  height: 250px;
+  width: 200px;
+}
