@@ -1,3 +1,5 @@
+# pour le format datetime des bookins --> Date.new.strftime('%Y-%m-%d')
+
 puts "Starting Seed"
 
 benjamin = User.create!(
