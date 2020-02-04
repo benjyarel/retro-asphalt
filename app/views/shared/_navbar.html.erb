@@ -1,0 +1,15 @@
+<div class="navbar-ra">
+<% if params[:action] == "home" %>
+  <div class="navbar-logo">
+    <p>R-A</p>
+  </div>
+  <h1 class="navbar-title"> Retro Asphalt</h5>
+  <% if current_user %>
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar-sign-up" %>
+  <% else %>
+    <%= link_to "Log In", new_user_session_path, class: "navbar-sign-up" %>
+  <% end %>
+  <% else %>
+<!-- TODO -->
+  <% end %>
+</div>
