@@ -1,25 +1,32 @@
 <div class="index-container">
   <div class="cars">
     <% @cars.each do |car| %>
-      <div class="car-card">
-        <div class="car-img">
-        </div>
-        <div class="car-bottom">
-          <div class="car-bottom-header">
-            <div class="car-bottom-model">
-              <p><%= car.brand %> <%= car.model %> </p>
+      <%= link_to car_path(car) do %>
+        <div class="car-card">
+          <div class="car-img">
+          </div>
+          <div class="car-bottom">
+            <div class="car-bottom-header">
+              <div class="car-bottom-model">
+                <p><%= car.brand %> <%= car.model %></p>
+              </div>
+              <div class="car-bottom-price">
+                <p><%= car.price %>€/jour</p>
+              </div>
             </div>
-            <div class="car-bottom-price"></div>
-          </div>
-          <div class="car-bottom-rating">
-          </div>
-          <div class="car-bottom-description">
+            <div class="car-bottom-rating">
+              <% 5.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+            </div>
+            <div class="car-bottom-description">
+              <p> <%= car.description %> </p>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
   <div class="map">
-
   </div>
 </div>

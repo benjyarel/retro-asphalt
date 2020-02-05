@@ -1,13 +1,18 @@
 .cars {
- background : lightblue;
  flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 16px;
+  padding: 16px;
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
 }
 
 .map {
-  background: orange;
+  background: lightgray;
   height: calc( 100vh - 90px);
   position: sticky;
   width: 33%;
@@ -15,5 +20,11 @@
 
 .car-card {
   background: grey;
-  min-height : 200px;
+  min-height: 160px;
+  max-width: 320px;
+
+  .car-bottom-header {
+    display: flex;
+    justify-content: space-between;
+  }
 }
