@@ -1,0 +1,19 @@
+.cars {
+ background : lightblue;
+ flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+}
+
+.map {
+  background: orange;
+  height: calc( 100vh - 90px);
+  position: sticky;
+  width: 33%;
+}
+
+.car-card {
+  background: grey;
+  min-height : 200px;
+}

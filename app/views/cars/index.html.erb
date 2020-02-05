@@ -1,5 +1,25 @@
-<h1>Cars#index</h1>
+<div class="index-container">
+  <div class="cars">
+    <% @cars.each do |car| %>
+      <div class="car-card">
+        <div class="car-img">
+        </div>
+        <div class="car-bottom">
+          <div class="car-bottom-header">
+            <div class="car-bottom-model">
+              <p><%= car.brand %> <%= car.model %> </p>
+            </div>
+            <div class="car-bottom-price"></div>
+          </div>
+          <div class="car-bottom-rating">
+          </div>
+          <div class="car-bottom-description">
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="map">
 
-<% @cars.each do |car| %>
-<h5><%= car.brand  %> // <%= car.model %></h5>
-<% end %>
+  </div>
+</div>
