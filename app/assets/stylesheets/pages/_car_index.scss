@@ -12,19 +12,25 @@
 }
 
 .map {
-  background: lightgray;
   height: calc( 100vh - 90px);
   position: sticky;
   width: 33%;
 }
 
 .car-card {
-  background: grey;
-  min-height: 160px;
+  min-height: 260px;
   max-width: 320px;
+  border: solid 1px grey;
+  background: lightgrey;
 
   .car-bottom-header {
     display: flex;
     justify-content: space-between;
+  }
+
+  .car-img {
+    width: 100%;
+    height: 144px;
+    background-size: cover;
   }
 }
