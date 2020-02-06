@@ -29,9 +29,11 @@
     justify-content: space-between;
   }
 
-  .car-img {
-    width: 100%;
+  .car-img img {
     height: 144px;
+    width: 318px;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
   }
 }
