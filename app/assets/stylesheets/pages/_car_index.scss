@@ -1,7 +1,8 @@
 .cars {
- flex-grow: 1;
+  flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: center;
   grid-gap: 16px;
   padding: 16px;
 
@@ -18,7 +19,7 @@
 }
 
 .car-card {
-  min-height: 260px;
+  min-height: 320px;
   max-width: 320px;
   border: solid 1px grey;
   background: lightgrey;
