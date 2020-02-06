@@ -1,4 +1,4 @@
-<div class="banner-show-car" style="background-image: linear-gradient(270deg, rgba(14,14,14,0.44) 36%, rgba(14,14,14,0.71) 58%), url('<%= cl_image_path @car.picture.key%>');">
+<div class="banner-show-car" style="background-image: linear-gradient(270deg, rgba(14,14,14,0.44) 36%, rgba(14,14,14,0.71) 58%), url('<%= instance_image_path @car.picture%>');">
   <h2 class="show-title text-center"><%= @car.brand %> <%= @car.model %></h5>
     <div class="btn btn-warning">Book it</div>
 </div>

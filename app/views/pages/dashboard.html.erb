@@ -1,0 +1,36 @@
+<div class="col offset-3">
+  <h1 class="text center mt-3" >welcome to your Dashboard <%= current_user.first_name%></h1>
+</div>
+<div class="main-container">
+  <div class="cars">
+    <h3>Your cars <small>(click to update)</small></h3>
+    <% @cars.each do |car| %>
+      <%= link_to car_path(car) do %>
+        <div class="car-card">
+          <div class="car-img">
+            <%= instance_image_tag car.picture %>
+          </div>
+          <div class="car-bottom">
+            <div class="car-bottom-header">
+              <div class="car-bottom-model">
+                <p><%= car.brand %> <%= car.model %></p>
+              </div>
+              <div class="car-bottom-price">
+                <p><%= car.price %>€/jour</p>
+              </div>
+            </div>
+            <div class="car-bottom-rating">
+              <% 5.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+            </div>
+            <div class="car-bottom-description">
+              <p> <%= car.description %> </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  </div>
+</div>
