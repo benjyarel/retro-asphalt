@@ -1,4 +1,4 @@
-# pour le format datetime des bookins --> Time.now.strftime('%Y-%m-%d')
+require "open-uri"
 
 
 puts "Starting Seed"
@@ -56,6 +56,10 @@ third_car = Car.create!(
   address: "6 rue Sorbier 75020 PARIS",
   description: "Revivez la période hyppie. Interdit de fumer à l'intérieur",
   )
+  picture_location = URI.open('app/assets/images/seed_images/vw_cocinelle.jpeg')
+  fourth_car.picture.attach(io: picture_location, filename: 'vw_cocinelle', content_type: 'image/png')
+  fourth_car.save
+  puts "Does #{fourth_car.model} has a picture? : #{fourth_car.picture.attached?}"
 
   fifth_car = Car.create!(
   user_id: 2,
@@ -65,7 +69,7 @@ third_car = Car.create!(
   price: 480,
   year: 1963,
   address: "10 rue Saint-Maur, 75011 Paris",
-  description: "Vous ne serez pas serein, lorsque vous ferez un créneau! Jaune possible, mais de mauvais goût",
+  description: "Vous ne serez pas serein lorsque vous ferez un créneau! Jaune possible, mais de mauvais goût",
   )
 
 
