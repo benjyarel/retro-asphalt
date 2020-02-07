@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :find_car, only: [:show, :edit, :update, :destroy]
 
   def index
     @cars = Car.all
@@ -10,9 +11,17 @@ class CarsController < ApplicationController
   end
 
   def new
+    @car = Car.new
   end
 
   def create
+    @car = Car.new(permit_cars_params)
+    @car.user = current_user
+    if @car.save
+      redirect_to dashboard_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -28,9 +37,17 @@ class CarsController < ApplicationController
     end
   end
 
+  def destroy
+    @car.delete
+  end
+
   private
 
+  def find_car
+    @car = Car.find(params[:id])
+  end
+
   def permit_cars_params
-    params.require(:car).permit(:brand, :model, :picture, :address, :power, :price)
+    params.require(:car).permit(:brand, :model, :picture, :address, :power, :price, :description, :year)
   end
 end
