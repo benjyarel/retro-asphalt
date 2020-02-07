@@ -1,0 +1,12 @@
+
+  <%= instance_image_tag @car.picture, class: "car-img" %>
+  <%= simple_form_for @car do |f| %>
+  <%= f.input :brand %>
+  <%= f.input :model %>
+  <%= f.input :power %>
+  <%= f.input :year, as: :integer %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.submit %>
+  <% end %>

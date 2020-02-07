@@ -5,12 +5,13 @@
     </div>
     <h1 class="navbar-title"> Retro Asphalt</h5>
     <% if current_user %>
+      <%= link_to "My Dashboard", dashboard_path, class: "navbar-button"  %>
       <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "navbar-button" %>
     <% else %>
       <%= link_to "Log In", new_user_session_path, class: "navbar-button" %>
     <% end %>
   <% else %>
-    <%= link_to "My Cars", root_path, class: "navbar-button"  %>
+    <%= link_to "My Dashboard", dashboard_path, class: "navbar-button"  %>
     <div class="navbar-logo">
       <p>R-A</p>
     </div>

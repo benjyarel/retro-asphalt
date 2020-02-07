@@ -1,7 +1,12 @@
-<div class="index-container">
+<div class="col offset-3">
+  <h1 class="text center mt-3" >welcome to your Dashboard <%= current_user.first_name%></h1>
+</div>
+<div class="main-container">
+
+  <h3>Your cars <small>(click to update)</small></h3>
   <div class="cars">
     <% @cars.each do |car| %>
-      <%= link_to car_path(car) do %>
+      <%= link_to edit_car_path(car) do %>
         <div class="car-card">
           <%= instance_image_tag car.picture, class: "car-img" %>
           <div class="car-bottom">
@@ -26,6 +31,7 @@
       <% end %>
     <% end %>
   </div>
-  <div class="map">
-  </div>
+
+  <%= link_to "Add a car", new_car_path, class: 'btn btn-warning'  %>
+
 </div>
