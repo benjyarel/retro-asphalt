@@ -3,15 +3,16 @@ class CarsController < ApplicationController
   before_action :find_car, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cars = Car.all
+    @cars = policy_scope(Car)
   end
 
   def show
-    @car = Car.find(params[:id])
+    authorize @car
   end
 
   def new
     @car = Car.new
+    authorize @car
   end
 
   def create
@@ -22,23 +23,25 @@ class CarsController < ApplicationController
     else
       render :new
     end
+    authorize @car
   end
 
   def edit
-    @car = Car.find(params[:id])
+    authorize @car
   end
 
   def update
-    @car = Car.find(params[:id])
     if @car.update(permit_cars_params)
       redirect_to dashboard_path
     else
       render :edit
     end
+    authorize @car
   end
 
   def destroy
     @car.delete
+    authorize @car
   end
 
   private
