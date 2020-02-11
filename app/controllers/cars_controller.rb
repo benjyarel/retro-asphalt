@@ -45,6 +45,9 @@ class CarsController < ApplicationController
   end
 
   private
+  def authorize_policy
+    authorize @car
+  end
 
   def find_car
     @car = Car.find(params[:id])
