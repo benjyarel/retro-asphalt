@@ -1,5 +1,8 @@
 require "open-uri"
 
+Car.destroy_all
+User.destroy_all
+Booking.destroy_all
 
 puts "Starting Seed"
 puts "Starting Fake Users"
@@ -31,7 +34,7 @@ second_car = Car.create!(
   power: 230,
   price: 275,
   year: 1937,
-  address: "10 rue des Vignolles, 75020 PARIS",
+  address: "10 Rue Ramus, 75020 PARIS",
   description: "On vous entendera rouler. Pneu plus larges que ton ancienne voiture.",
   )
 

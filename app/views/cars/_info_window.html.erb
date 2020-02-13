@@ -1,0 +1,5 @@
+<%= link_to car_path(car) do  %>
+  <%= instance_image_tag car.picture %>
+  <h3><%= car.model %></h3>
+  <p><%= car.price %> € / Day</p>
+<% end %>
