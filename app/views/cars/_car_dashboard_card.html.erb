@@ -1,5 +1,5 @@
-<%= link_to edit_car_path(car) do %>
-  <div class="car-card">
+<div class="car-card">
+  <%= link_to edit_car_path(car) do %>
     <%= instance_image_tag car.picture, class: "car-img" %>
     <div class="car-bottom">
       <div class="car-bottom-header">
@@ -17,8 +17,8 @@
       </div>
       <div class="car-bottom-description">
         <p> <%= car.description %> </p>
+      <%= link_to "⨯", car_path(car), method: :delete, data: { confirm: "Are you sure?" } %>
       </div>
-      <%= link_to "⨯", car_path(car), method: :delete, data: { confirm: "Are you sure?" }, style: 'display: block;'  %>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

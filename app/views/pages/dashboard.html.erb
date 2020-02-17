@@ -8,6 +8,29 @@
       <%= render "cars/car_dashboard_card", car: car %>
     <% end %>
   </div>
+
+  <div class="bookings">
+    <div class="owned-booking">
+      <h3> Your cars was booked by :</h3>
+        <% @owned_cars_bookings.each do |booking| %>
+          <p><strong><%= booking.user.email %></strong></p>
+          <p>booked:</p>
+          <p><%= booking.car.brand %> <%= booking.car.model%></p>
+          <p>for: 4days, your income is: 200 euros</p>
+        <% end %>
+    </div>
+    <div class="wanted-booking">
+      <h3>Bookings you have done:</h3>
+      <% @bookings.each do |booking| %>
+        <p><%= booking.car.brand %> <%= booking.car.model%> <small>(<%= booking.car.user.email %>)</small></p>
+        <p><small>Vous l'avez loué pour 4 jours, celà vous a couté 100€:</small></p>
+        <% if booking.review? %>
+          <p class=" mb-4"><small><em><%= booking.review %></em></small></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
   <div class="new-form">
     <%= render 'cars/car_form', car: @car %>
   </div>
