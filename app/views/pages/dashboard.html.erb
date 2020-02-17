@@ -26,15 +26,28 @@
             <div class="car-bottom-description">
               <p> <%= car.description %> </p>
             </div>
+          <%= link_to "⨯", car_path(car), method: :delete, data: { confirm: "Are you sure?" }, style: 'display: block;'  %>
           </div>
         </div>
       <% end %>
     <% end %>
   </div>
+  <div class="new-form">
+    <%= simple_form_for @car, remote: true do |f| %>
+    <%= f.input :brand %>
+    <%= f.input :model %>
+    <%= f.input :power %>
+    <%= f.input :year, as: :integer %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.input :address %>
+    <%= f.submit "create your car", class: "btn btn-success" %>
+    <% end %>
+  </div>
   <div class=" actions d-flex">
-    <div class="action m-2">
-      <%= link_to "Add a car", new_car_path, class: 'btn btn-warning'  %>
-    </div>
+ <!--    <div class="action m-2">
+      <%#= link_to "Add a car", new_car_path, class: 'btn btn-warning'  %>
+    </div> -->
     <div class="action m-2">
       <%= link_to "back to list", cars_path, class: "btn btn-warning" %>
     </div>
