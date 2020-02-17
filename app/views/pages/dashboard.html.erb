@@ -2,7 +2,6 @@
   <h1 class="text center mt-3" >welcome to your Dashboard <%= current_user.first_name%></h1>
 </div>
 <div class="main-container">
-
   <h3>Your cars <small>(click to update)</small></h3>
   <div class="cars">
     <% @cars.each do |car| %>
@@ -13,9 +12,6 @@
     <%= render 'cars/car_form', car: @car %>
   </div>
   <div class=" actions d-flex">
- <!--    <div class="action m-2">
-      <%#= link_to "Add a car", new_car_path, class: 'btn btn-warning'  %>
-    </div> -->
     <div class="action m-2">
       <%= link_to "back to list", cars_path, class: "btn btn-warning" %>
     </div>
