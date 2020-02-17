@@ -30,12 +30,12 @@ class CarsController < ApplicationController
     if @car.save
       respond_to do |format|
         format.html { redirect_to dashboard_path }
-        format.js # views/cars/create.js.erb
+        format.js
       end
     else
       respond_to do |format|
         format.html { render 'pages/dashboard' }
-        format.js # views/cars/create.js.erb
+        format.js
       end
     end
     authorize @car
@@ -61,6 +61,7 @@ class CarsController < ApplicationController
   end
 
   private
+
   def authorize_policy
     authorize @car
   end

@@ -12,6 +12,6 @@ const refreshNewCarForm = (refreshedForm) => {
 <% if @car.errors.any? %>
   refreshNewCarForm("<%= j render 'cars/car_form', car: @car %>");
 <% else %>
-refreshNewCarForm("<%= j render 'cars/car_form', car: @car %>");
-insertNewCar('<%= j render "cars/car_dashboard_card", car: @car %>');
+  refreshNewCarForm("<%= j render 'cars/car_form', car: @car %>");
+  insertNewCar('<%= j render "cars/car_dashboard_card", car: @car %>');
 <% end %>
