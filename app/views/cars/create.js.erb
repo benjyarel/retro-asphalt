@@ -1,10 +1,10 @@
 
-console.log('connard')
 
-function refreshForm(innerHTML) {
-  const newCarForm = document.getElementById('new_form');
-  console.log("coucou");
-  console.log(newCarForm.innerHTML);
-  newCarForm.innerHTML = innerHTML;
-  console.log(newCarForm.innerHTML);
-}
+
+const refreshCars = (carCardHTML) => {
+ const carsList = document.querySelector('.cars');
+  carsList.insertAdjacentHTML('beforeend', carCardHTML);
+  console.log("j'insere ma gueule");
+};
+
+refreshCars('<%= j render "cars/car_dashboard_card", car: @car %>');

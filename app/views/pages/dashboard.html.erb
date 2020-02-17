@@ -6,43 +6,11 @@
   <h3>Your cars <small>(click to update)</small></h3>
   <div class="cars">
     <% @cars.each do |car| %>
-      <%= link_to edit_car_path(car) do %>
-        <div class="car-card">
-          <%= instance_image_tag car.picture, class: "car-img" %>
-          <div class="car-bottom">
-            <div class="car-bottom-header">
-              <div class="car-bottom-model">
-                <p><%= car.brand %> <%= car.model %></p>
-              </div>
-              <div class="car-bottom-price">
-                <p><%= car.price %>€/jour</p>
-              </div>
-            </div>
-            <div class="car-bottom-rating">
-              <% 5.times do %>
-                <i class="fas fa-star"></i>
-              <% end %>
-            </div>
-            <div class="car-bottom-description">
-              <p> <%= car.description %> </p>
-            </div>
-          <%= link_to "⨯", car_path(car), method: :delete, data: { confirm: "Are you sure?" }, style: 'display: block;'  %>
-          </div>
-        </div>
-      <% end %>
+      <%= render "cars/car_dashboard_card", car: car %>
     <% end %>
   </div>
   <div class="new-form">
-    <%= simple_form_for @car, remote: true do |f| %>
-    <%= f.input :brand %>
-    <%= f.input :model %>
-    <%= f.input :power %>
-    <%= f.input :year, as: :integer %>
-    <%= f.input :price %>
-    <%= f.input :description %>
-    <%= f.input :address %>
-    <%= f.submit "create your car", class: "btn btn-success" %>
-    <% end %>
+    <%= render 'cars/car_form', car: @car %>
   </div>
   <div class=" actions d-flex">
  <!--    <div class="action m-2">

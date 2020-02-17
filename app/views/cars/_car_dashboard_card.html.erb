@@ -1,0 +1,24 @@
+<%= link_to edit_car_path(car) do %>
+  <div class="car-card">
+    <%= instance_image_tag car.picture, class: "car-img" %>
+    <div class="car-bottom">
+      <div class="car-bottom-header">
+        <div class="car-bottom-model">
+          <p><%= car.brand %> <%= car.model %></p>
+        </div>
+        <div class="car-bottom-price">
+          <p><%= car.price %>€/jour</p>
+        </div>
+      </div>
+      <div class="car-bottom-rating">
+        <% 5.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+      </div>
+      <div class="car-bottom-description">
+        <p> <%= car.description %> </p>
+      </div>
+    <%= link_to "⨯", car_path(car), method: :delete, data: { confirm: "Are you sure?" }, style: 'display: block;'  %>
+    </div>
+  </div>
+<% end %>
