@@ -1,6 +1,6 @@
 <div class="banner-show-car" style="background-image: linear-gradient(270deg, rgba(14,14,14,0.44) 36%, rgba(14,14,14,0.71) 58%), url('<%= instance_image_path @car.picture%>');">
   <h2 class="show-title text-center"><%= @car.brand %> <%= @car.model %></h5>
-    <%= link_to "Book It", new_car_booking_path(@car), class: "btn btn-warning" %>
+    <%= link_to "Book It", new_booking_path(car_id: @car.id), class: "btn btn-warning" %>
     <%= link_to "back to list", cars_path, class: "btn btn-warning" %>
 </div>
 <div class="main-container">

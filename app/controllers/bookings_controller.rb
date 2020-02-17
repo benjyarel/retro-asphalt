@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(params_booking)
     @booking.user = current_user
-    @booking.car = Car.find(params["car_id"])
+    #@booking.car = Car.find(params["car_id"])
     if @booking.save
       redirect_to dashboard_path
     else
@@ -20,6 +20,6 @@ class BookingsController < ApplicationController
   private
 
   def params_booking
-    params.require(:booking).permit(:starting_day, :ending_day, :review)
+    params.require(:booking).permit(:starting_day, :ending_day, :review, :car_id)
   end
 end
