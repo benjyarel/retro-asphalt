@@ -8,5 +8,6 @@ class PagesController < ApplicationController
     @cars = Car.where("user_id = ?", current_user)
     @car = Car.new
     @owned_cars_bookings = @cars.map { |car| car.bookings }.flatten
+    @bookings = current_user.bookings
   end
 end

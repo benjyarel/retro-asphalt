@@ -21,6 +21,13 @@
     </div>
     <div class="wanted-booking">
       <h3>Bookings you have done:</h3>
+      <% @bookings.each do |booking| %>
+        <p><%= booking.car.brand %> <%= booking.car.model%> <small>(<%= booking.car.user.email %>)</small></p>
+        <p><small>Vous l'avez loué pour 4 jours, celà vous a couté 100€:</small></p>
+        <% if booking.review? %>
+          <p class=" mb-4"><small><em><%= booking.review %></em></small></p>
+        <% end %>
+      <% end %>
     </div>
   </div>
 
