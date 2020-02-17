@@ -24,12 +24,19 @@ class CarsController < ApplicationController
   end
 
   def create
+    @cars = Car.where("user_id = ?", current_user)
     @car = Car.new(permit_cars_params)
     @car.user = current_user
     if @car.save
-      redirect_to dashboard_path
+      respond_to do |format|
+        format.html { redirect_to dashboard_path }
+        format.js
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render 'pages/dashboard' }
+        format.js
+      end
     end
     authorize @car
   end
@@ -49,10 +56,12 @@ class CarsController < ApplicationController
 
   def destroy
     @car.delete
+    redirect_to dashboard_path
     authorize @car
   end
 
   private
+
   def authorize_policy
     authorize @car
   end

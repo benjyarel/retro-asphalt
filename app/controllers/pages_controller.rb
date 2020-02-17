@@ -6,5 +6,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @cars = Car.where("user_id = ?", current_user)
+    @car = Car.new
   end
 end
