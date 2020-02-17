@@ -1,10 +1,12 @@
-  <%= simple_form_for car, remote: true do |f| %>
-  <%= f.input :brand %>
-  <%= f.input :model %>
-  <%= f.input :power %>
-  <%= f.input :year, as: :integer %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.input :address %>
-  <%= f.submit %>
-  <% end %>
+
+    <%= simple_form_for car, remote: true do |f| %>
+      <%= f.input :brand %>
+      <%= f.input :model %>
+      <%= f.input :power %>
+      <%= f.input :year, as: :integer %>
+      <%= f.input :price %>
+      <%= f.input :description %>
+      <%= f.input :address %>
+      <%= f.submit %>
+    <% end %>
+
