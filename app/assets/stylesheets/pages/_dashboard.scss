@@ -5,3 +5,18 @@
     padding: 16px;
     width: 260px;
 }
+
+.bookings {
+  display: flex;
+  justify-content: space-around;
+}
+
+.owned-booking {
+  background: lightblue;
+  height: fit-content;
+}
+
+.wanted-booking {
+  background: lightblue;
+  height: fit-content;
+}
