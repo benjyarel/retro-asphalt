@@ -1,4 +1,10 @@
 class BookingsController < ApplicationController
+
+def show
+  @booking = Booking.find(params[:id])
+  authorize @booking
+end
+
   def new
     @car = Car.find(params[:car_id])
     @booking = Booking.new
@@ -14,12 +20,13 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.car_sku = @car.sku
     @booking.state = "pending"
+    @booking.save
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
         name: @car.sku,
-        images: [instance_image_path(@booking.car.picture)],
+        images: [image_url_for_stripe(@booking.car.picture)],
         amount: @booking.amount_cents,
         currency: 'eur',
         quantity: 1
@@ -29,19 +36,18 @@ class BookingsController < ApplicationController
     )
     @booking.update(checkout_session_id: session.id)
     redirect_to new_booking_payment_path(@booking)
-
-    # ----------------------------------
-    # @booking = Booking.new(params_booking)
-    # @booking.user = current_user
-    # if @booking.save
-    #   redirect_to dashboard_path
-    # else
-    #   render :new
-    # end
     authorize @booking
   end
 
   private
+
+  def image_url_for_stripe(picture)
+    if picture.attached?
+      cl_image_path picture.key
+    else
+      ActionController::Base.helpers.image_url('no-picture.png')
+    end
+  end
 
   def params_booking
     params.require(:booking).permit(:starting_day, :ending_day, :review, :car_id)

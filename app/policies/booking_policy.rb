@@ -5,7 +5,7 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
-  def show
+  def show?
     true
   end
 

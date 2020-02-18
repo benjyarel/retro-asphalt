@@ -14,6 +14,14 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def instance_image_path(picture, options = {})
+    if picture.attached?
+      cl_image_path picture.key, options
+    else
+      image_path "no-picture.png", options
+    end
+  end
+
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
