@@ -1,0 +1,15 @@
+<h1>show of booking</h1>
+<br>
+<br>
+<br>
+<div class="main-container">
+  <div class="row">
+    <div class="col-4 offset-4">
+      <p>"Hey you payment is actualy: </p>
+      <h3 class="text-warning"> <%= @booking.state%></h3>
+      <p>we will send you by mail the fee.</p>
+      <p>it costed you <%= @booking.amount %> € , for a location of <%= (@booking.ending_day - @booking.starting_day + 1).floor %> days</p>
+      <%= link_to "Go back to your dashboard", dashboard_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
