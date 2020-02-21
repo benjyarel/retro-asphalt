@@ -3,7 +3,7 @@
 </div>
 <div class="main-container">
   <h3>Your cars <small>(click to update)</small></h3>
-  <div class="cars">
+  <div class="owned-cars">
     <% @cars.each do |car| %>
       <%= render "cars/car_dashboard_card", car: car %>
     <% end %>
@@ -13,21 +13,19 @@
     <div class="owned-booking">
       <h3> Your cars was booked by :</h3>
         <% @owned_cars_bookings.each do |booking| %>
-          <p><strong><%= booking.user.email %></strong></p>
-          <p>booked:</p>
+          <p><strong>booked by: </strong><%= booking.user.email %></p>
           <p><%= booking.car.brand %> <%= booking.car.model%></p>
-          <p>for: 4days, your income is: 200 euros</p>
+          <p>votre voiture a été louée jusqu'au <%= booking.ending_day %> pour <%= booking.amount %>€</p>
         <% end %>
     </div>
     <div class="wanted-booking">
       <h3>Bookings you have done:</h3>
-      <% @bookings.each do |booking| %>
-        <p><%= booking.car.brand %> <%= booking.car.model%> <small>(<%= booking.car.user.email %>)</small></p>
-        <p><small>Vous l'avez loué pour 4 jours, celà vous a couté 100€:</small></p>
-        <% if booking.review? %>
-          <p class=" mb-4"><small><em><%= booking.review %></em></small></p>
+      <div class="bookings-list">
+        <% @bookings.each do |booking| %>
+          <p><%= booking.car.brand %> <%= booking.car.model%> <small>(<%= booking.car.user.email %>)</small></p>
+          <p><small>Vous l'avez loué pour 4 jours, celà vous a couté <%= booking.amount %>€ </small></p>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 

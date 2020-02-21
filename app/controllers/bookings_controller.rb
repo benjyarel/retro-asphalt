@@ -18,12 +18,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.car_sku = @car.sku
     @booking.state = "pending"
-    if @booking.save
-      stripe_paiement_session
-    else
-      render :new
-    end
 
+    @booking.save ? stripe_paiement_session : render(:new)
 
     authorize @booking
   end
@@ -36,20 +32,19 @@ class BookingsController < ApplicationController
 
   def stripe_paiement_session
     session = Stripe::Checkout::Session.create(
-        payment_method_types: ['card'],
-        line_items: [{
-          name: @booking.car.sku,
-          images: [image_url_for_stripe(@booking.car.picture)],
-          amount: @booking.amount_cents,
-          currency: 'eur',
-          quantity: 1
-        }],
-        success_url: booking_url(@booking),
-        cancel_url: booking_url(@booking)
-      )
-      @booking.update_attribute(:checkout_session_id, session.id)
-      redirect_to new_booking_payment_path(@booking)
-
+      payment_method_types: ['card'],
+      line_items: [{
+        name: @booking.car.sku,
+        images: [image_url_for_stripe(@booking.car.picture)],
+        amount: @booking.amount_cents,
+        currency: 'eur',
+        quantity: 1
+      }],
+      success_url: booking_url(@booking),
+      cancel_url: booking_url(@booking)
+    )
+    @booking.update_attribute(:checkout_session_id, session.id)
+    redirect_to new_booking_payment_path(@booking)
   end
 
   def image_url_for_stripe(picture)
@@ -59,5 +54,4 @@ class BookingsController < ApplicationController
       ActionController::Base.helpers.image_url('no-picture.png')
     end
   end
-
 end
