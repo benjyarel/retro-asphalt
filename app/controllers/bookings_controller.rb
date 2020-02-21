@@ -42,7 +42,7 @@ class BookingsController < ApplicationController
 
   def image_url_for_stripe(picture)
     if picture.attached?
-      cl_image_path picture.key
+       picture.key
     else
       ActionController::Base.helpers.image_url('no-picture.png')
     end
