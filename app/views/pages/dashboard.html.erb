@@ -8,12 +8,11 @@
       <%= render "cars/car_dashboard_card", car: car %>
     <% end %>
   </div>
-
   <div class="bookings">
     <div class="owned-booking">
       <h3> Your cars was booked by :</h3>
         <% @owned_cars_bookings.each do |booking| %>
-          <p><strong>booked by: </strong><%= booking.user.email %></p>
+          <p><strong>Louée par: </strong><%= booking.user.email %></p>
           <p><%= booking.car.brand %> <%= booking.car.model%></p>
           <p>votre voiture a été louée jusqu'au <%= booking.ending_day %> pour <%= booking.amount %>€</p>
         <% end %>
@@ -28,7 +27,6 @@
       </div>
     </div>
   </div>
-
   <div class="new-form">
     <%= render 'cars/car_form', car: @car %>
   </div>
