@@ -17,7 +17,7 @@ puts "Fake Users done!"
 puts "Starting Fake Cars"
 
 first_car = Car.create!(
-  user_id: 1,
+  user_id: benjamin.id,
   brand: "Ford",
   model: "GT 40",
   power: 260,
@@ -29,7 +29,7 @@ first_car = Car.create!(
   )
 
 second_car = Car.create!(
-  user_id: 2,
+  user_id: toto.id,
   brand: "Ford",
   model: "Mustang",
   sku: 'ford-mustang',
@@ -41,7 +41,7 @@ second_car = Car.create!(
   )
 
 third_car = Car.create!(
-  user_id: 3,
+  user_id: mc_gyver.id,
   brand: "Jaguar",
   model: "Type-S",
   power: 230,
@@ -53,7 +53,7 @@ third_car = Car.create!(
   )
 
   fourth_car = Car.create!(
-  user_id: 3,
+  user_id: mc_gyver.id,
   brand: "Volkswagen",
   model: "Cocinelle",
   sku: 'Volkswagen-cocinnelle',
@@ -69,7 +69,7 @@ third_car = Car.create!(
   puts "Does #{fourth_car.model} has a picture? : #{fourth_car.picture.attached?}"
 
   fifth_car = Car.create!(
-  user_id: 2,
+  user_id: toto.id,
   brand: "Ferrari",
   model: "F-40",
   power: 310,
@@ -81,7 +81,7 @@ third_car = Car.create!(
   )
 
   sixth_car = Car.create!(
-    user_id: 1,
+    user_id: benjamin.id,
     brand: "Jaguar",
     model: " XJ 220",
     sku: 'jaguar-xj-220',
@@ -96,27 +96,27 @@ puts "Fake Cars done"
 puts "Starting Fake Booking"
 
 first_booking = Booking.create!(
-  user_id: 2,
-  car_id: 1,
+  user_id: toto.id,
+  car_id: first_car.id,
   review: " It was great !!",
-  starting_day:(Date.today - 1).strftime('%Y-%m-%d'),
-  ending_day: (Date.today - 4).strftime('%Y-%m-%d'),
+  starting_day:(Date.today - 4).strftime('%Y-%m-%d'),
+  ending_day: (Date.today - 1).strftime('%Y-%m-%d'),
   )
 
 first_booking = Booking.create!(
-  user_id: 3,
-  car_id: 6,
+  user_id: mc_gyver.id,
+  car_id: sixth_car.id,
   review: " It was great !!",
-  starting_day:(Date.today - 1).strftime('%Y-%m-%d'),
-  ending_day: (Date.today - 4).strftime('%Y-%m-%d'),
+  starting_day:(Date.today - 4).strftime('%Y-%m-%d'),
+  ending_day: (Date.today - 1).strftime('%Y-%m-%d'),
   )
 
 second_booking = Booking.create!(
-  user_id: 1,
-  car_id: 2,
+  user_id: benjamin.id,
+  car_id: second_car.id,
   review: " Didn't like it, nothing to repair.",
-  starting_day:(Date.today - 5).strftime('%Y-%m-%d'),
-  ending_day: (Date.today - 6).strftime('%Y-%m-%d'),
+  starting_day:(Date.today - 6).strftime('%Y-%m-%d'),
+  ending_day: (Date.today - 1).strftime('%Y-%m-%d'),
   )
 
 puts "Fake Bookings done!"
