@@ -19,14 +19,18 @@
 }
 
 .car-card {
-  min-height: 320px;
-  max-width: 320px;
+  height: 320px;
+  width: 320px;
   border: solid 1px grey;
   background: #4EB0CE;
 
   .car-bottom-header {
     display: flex;
     justify-content: space-between;
+  }
+
+  p {
+    margin-top: 4px;
   }
 
   .car-img {
