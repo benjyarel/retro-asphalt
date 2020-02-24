@@ -8,11 +8,10 @@ test "Create a new car" do
   assert car.save
 end
 
-test "une voiture doit avoir un user obligatoirement" do
+test "A car must have e user" do
   error_car = Car.new(brand: "Toyota")
   assert car.user
   assert_not error_car.user
-
 end
 
 
