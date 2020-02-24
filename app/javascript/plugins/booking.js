@@ -10,7 +10,7 @@ const toggleDateInputs = function() {
 
     flatpickr(startDateInput, {
     minDate: 'today',
-    dateFormat: 'd-m-Y',
+    dateFormat: 'Y-m-d',
     disable: unvailableDates,
     onChange: function(selectedDates, selectedDate) {
       if (selectedDate === '') {
@@ -24,7 +24,7 @@ const toggleDateInputs = function() {
   });
     const endDateCalendar =
       flatpickr(endDateInput, {
-        dateFormat: 'd-m-Y',
+        dateFormat: 'Y-m-d',
         disable: unvailableDates,
         },
       );

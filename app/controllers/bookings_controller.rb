@@ -15,10 +15,7 @@ class BookingsController < ApplicationController
     @car = @booking.car
     days_booked = (@booking.ending_day - @booking.starting_day + 1).floor
     @booking.amount_cents = @booking.car.price_cents * days_booked
-    # @booking.user = current_user
-    # @booking.car_sku = @car.sku
-    # @booking.state = "pending"
-    @booking.update_attributes(user: current_user, car_sku: @car.sku, state:'pending')
+    @booking.update_attributes(user: current_user, car_sku: @car.sku, state: 'pending')
 
     @booking.save ? stripe_paiement_session : render(:new)
 
