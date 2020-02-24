@@ -14,7 +14,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "A user with the right data can be saved and have picture attachment" do
     user.update_attributes(password:"123456")
-    assert_not(user.save && user.picture,"A validate user can be saved.")
+    assert_not(user.save && user.picture,"A validate user can be saved." )
   end
 
 end

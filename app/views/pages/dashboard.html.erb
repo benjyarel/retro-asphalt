@@ -5,7 +5,7 @@
   <h3>Your cars <small>(click to update)</small></h3>
   <div class="owned-cars">
     <% @cars.each do |car| %>
-      <%= render "cars/car_dashboard_card", car: car %>
+      <%= render "cars/car_card", car: car %>
     <% end %>
   </div>
   <div class="bookings">
