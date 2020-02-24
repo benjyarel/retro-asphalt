@@ -3,7 +3,7 @@
     <% @cars.each do |car| %>
       <%= link_to car_path(car) do %>
         <div class="car-card">
-          <%= instance_image_tag car.picture, class: "car-img" %>
+          <%= instance_image_tag car.picture, class: "car-img",  height: 160, crop:"scale" %>
           <div class="car-bottom">
             <div class="car-bottom-header">
               <div class="car-bottom-model">
@@ -19,7 +19,7 @@
               <% end %>
             </div>
             <div class="car-bottom-description">
-              <p> <%= car.description %> </p>
+              <p> <%= car.description.truncate(90) %> </p>
             </div>
           </div>
         </div>
