@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :car
   monetize :amount_cents
-  validates :starting_day, :ending_day, presence: true, availability: true
+  validates :starting_day, :ending_day, presence: true, availability: true, on: :create
   validate :positive_booking_duration
 end
 
@@ -14,5 +14,4 @@ def positive_booking_duration
   if ending_day < starting_day
     errors.add(:ending_day, "Doit être antérieur au jour de départ")
   end
-
 end
