@@ -1,0 +1,8 @@
+<h1>Car Created</h1>
+
+
+<p>Hey ! <%= @user.first_name %> !</p>
+<p>
+  <strong><%= @car.brand %> <%= @car.model %></strong> car has been created.
+</p>
+ you can check this car here: <%= link_to "Your car", car_url(@car), target:"_blank" %>
