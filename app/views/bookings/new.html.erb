@@ -1,10 +1,12 @@
-<div class="main-container">
-  <%= simple_form_for @booking do |f| %>
-  <%= f.hidden_field :car_id, value: @car.id %>
-  <%= f.input :starting_day %>
-  <%= f.input :ending_day %>
-  <%= f.submit "book it", class: 'btn btn-primary' %>
-  <% end %>
+<div class="container-fluid" data-unavailable="<%= @car.unavailable_dates.to_json %>">
+  <div class="row">
+    <div class=" col-4 offset-4">
+      <%= simple_form_for @booking do |f| %>
+      <%= f.hidden_field :car_id, value: @car.id %>
+        <%= f.input :starting_day, as: :string, label: "Dates", placeholder: "From", wrapper_html: { class: "inline_field_wrapper", data: { unavailable: @car.unavailable_dates.to_json } } %>
+        <%= f.input :ending_day, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
+        <%= f.submit "book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-
