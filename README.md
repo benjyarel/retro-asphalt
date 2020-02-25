@@ -1,23 +1,22 @@
 
-https://retro-asphalt.herokuapp.com/
+# Retro Asphalt (exercice)
 
+https://retro-asphalt.herokuapp.com/
 
 Marketplace afin de tester et mettre en place plusieurs fonctionnalités « back-end » et d’approfondir ma connaissance sur le Framework Rails.
 Le Design, l’UI et l’UX n’étant pas le but premier de cette app ( jusque là :-) ) . L’app est « volontairement »  moche , cherchant simplement à satisfaire des besoins de navigation entre les différentes routes.
 
-Features:
+## Features
 
 -User:
-
 
 -Paiement:
 
 -Mailing:
 
--map:
+-Map:
 
-
-Aspects techniques:
+## Aspects Techniques:
 
 - Model :
 
