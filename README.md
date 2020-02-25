@@ -16,7 +16,7 @@ Le Design, l’UI et l’UX n’étant pas le but premier de cette app ( jusque 
   ainsi que les locations de leur propres voitures.
  ```
 
-####Paiement:
+#### Paiement:
 
  ```
  Une location d'une voiture est possible, selon les disponibilités de cette dernière.
@@ -24,14 +24,14 @@ Le Design, l’UI et l’UX n’étant pas le but premier de cette app ( jusque 
  le paiment effectué
  ```
 
-####Mailing:
+#### Mailing:
 
 ```
 Lors de la création d'une voiture, l'utilisateur reçoit un mail ( environnement dev uniquement).
 Lui confirmant la création
 ```
 
-####Map:
+#### Map:
 
 ```
 Toutes les voitures sont géocodées
@@ -52,8 +52,8 @@ Cloudinary, si non , envoi d'une image par défaut.
 
 ```
 Le modèle booking, dispose d'une méthode de vérification que la durée de location est positive.
-Un "validator" de disponibilité de la voiture a été crée également, afin de ne pas avoir plusieurs locations
-sur une même journée.
+Un "validator" de disponibilité de la voiture a été crée également, afin de ne pas avoir plusieurs
+locations sur une même journée.
 ```
 
 #### AJAX (rails 5.2):
