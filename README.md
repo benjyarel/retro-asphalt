@@ -9,31 +9,49 @@ Le Design, l’UI et l’UX n’étant pas le but premier de cette app ( jusque 
 ## Features
 
 #### User:
+
 ```
   Chaque User a la possibilité de rajouter, louer, supprimer, éditer ses voitures.
-  Ils ont accès a un Dashboard, afin de pouvoir effectuer les mise à jours et voir les locations qu'ils font, et les locations de leur propres voitures.
+  Ils ont accès a un Dashboard, afin de pouvoir voir les locations qu'ils font,
+  ainsi que les locations de leur propres voitures.
  ```
 
--Paiement:
+####Paiement:
 
--Mailing:
+ ```
+ ```
 
--Map:
+####Mailing:
+
+```
+```
+
+####Map:
+
+```
+```
+
 
 ## Aspects Techniques:
 
-- Model :
 
-- Helpers / validations :
+#### Model :
 
-- AJAX ( rails 5.2):
+```
+```
 
-- Forms with JS
+#### Helpers :
 
-- Tests:
+#### Validations :
 
-- Autorisation
+#### AJAX (rails 5.2):
 
-- Routing
+#### Forms with JS
 
-- Api de paiement:
+#### Tests:
+
+#### Autorisation
+
+#### Routing
+
+#### Api de paiement:
