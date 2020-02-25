@@ -1,6 +1,6 @@
 
 const insertNewCar = (carCardHTML) => {
- const carsList = document.querySelector('.cars');
+ const carsList = document.querySelector('.owned-cars');
   carsList.insertAdjacentHTML('beforeend', carCardHTML);
 }
 
@@ -13,5 +13,5 @@ const refreshNewCarForm = (refreshedForm) => {
   refreshNewCarForm("<%= j render 'cars/car_form', car: @car %>");
 <% else %>
   refreshNewCarForm("<%= j render 'cars/car_form', car: @car %>");
-  insertNewCar('<%= j render "cars/car_dashboard_card", car: @car %>');
+  insertNewCar('<%= j render "cars/car_card", car: @car %>');
 <% end %>
