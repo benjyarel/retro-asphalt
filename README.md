@@ -1,14 +1,36 @@
-Training Marketplace Project (Mainly for Back-end features):
-
- the purpose is to set-up these features:
-
- - User Dashboard/sign up
- - Handle Authorizations for security
- - Geocoding with map and markers on index
- - Paiement system with Stripe
- - Mailing system for user (Sidekik)
- - A lil'bit of TDD
-
- Thinking of a V2, to Style, design, and Ajaxified all the App:
 
 https://retro-asphalt.herokuapp.com/
+
+
+Marketplace afin de tester et mettre en place plusieurs fonctionnalités « back-end » et d’approfondir ma connaissance sur le Framework Rails.
+Le Design, l’UI et l’UX n’étant pas le but premier de cette app ( jusque là :-) ) . L’app est « volontairement »  moche , cherchant simplement à satisfaire des besoins de navigation entre les différentes routes.
+
+Features:
+
+-User:
+
+
+-Paiement:
+
+-Mailing:
+
+-map:
+
+
+Aspects techniques:
+
+- Model :
+
+- Helpers / validations :
+
+- AJAX ( rails 5.2):
+
+- Forms with JS
+
+- Tests:
+
+- Autorisation
+
+- Routing
+
+- Api de paiement:
