@@ -9,8 +9,10 @@ Le Design, l’UI et l’UX n’étant pas le but premier de cette app ( jusque 
 ## Features
 
 #### User:
+```
   Chaque User a la possibilité de rajouter, louer, supprimer, éditer ses voitures.
   Ils ont accès a un Dashboard, afin de pouvoir effectuer les mise à jours et voir les locations qu'ils font, et les locations de leur propres voitures.
+ ```
 
 -Paiement:
 
